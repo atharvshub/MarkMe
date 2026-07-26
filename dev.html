@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Developer Profile - MarkMe</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* --- MarkMe Theme Variables --- */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 76px;
+        }
+
+        main { flex: 1; }
+
+        /* Navbar */
+        .navbar { background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .navbar-brand { font-weight: 800; color: var(--primary-color) !important; font-size: 1.4rem; }
+        .nav-link { color: var(--secondary-color); font-weight: 500; }
+        
+        /* Footer */
+        footer { background: #0f172a; color: #94a3b8; padding: 30px 0; font-size: 0.85rem; margin-top: auto; }
+        footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
+        footer a:hover { color: white; }
+
+        /* --- Developer Specific Styles --- */
+        
+        /* Profile Image */
+        .dev-img-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .dev-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+            transition: transform 0.3s;
+        }
+        .dev-photo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Card Styling */
+        .dev-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: none;
+            overflow: hidden;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Social Icons */
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Skills Chips */
+        .skill-badge {
+            background-color: white;
+            border: 1px solid #cbd5e1;
+            color: var(--secondary-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        .skill-badge i {
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        .skill-badge:hover {
+            border-color: var(--primary-color);
+            background-color: #eff6ff;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-links { text-align: center; margin-top: 15px; }
+            .footer-links a { display: block; margin: 8px 0; }
+            .dev-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-graduation-cap"></i> MarkMe
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-lg-2 px-3 rounded-pill" href="javascript:history.back()">Go Back</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10" data-aos="zoom-in">
+                    
+                    <div class="dev-card">
+                        
+                        <div class="dev-img-container">
+                            <img src="dev.jpg" alt="Atharv Tambe" class="dev-photo">
+                        </div>
+                        
+                        <h1 class="fw-bold text-dark mb-1">ATHARV AKSHAY TAMBE</h1>
+                        <p class="text-primary fw-bold text-uppercase letter-spacing-1 mb-4">Full Stack Developer | Innovator</p>
+                        
+                        <div class="mb-5">
+                            <a class="social-btn" href="https://www.facebook.com/share/1UyuZ4Xgky/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="social-btn" href="https://www.linkedin.com/in/atharv-tambe-4149aa2b0" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="social-btn" href="https://instagram.com/atharv_tambe_0310" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="social-btn" href="mailto:atharvtambe0812@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                            <a class="social-btn" href="https://atharvshub.42web.io" target="_blank"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+
+                        <hr class="opacity-25 mx-auto" style="width: 50%; margin-bottom: 40px;">
+
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-10">
+                                <h3 class="section-title">About Me</h3>
+                                <p class="text-muted fs-5 lh-lg">
+                                    Atharv Akshay Tambe is a dedicated developer with a strong foundation in both front-end and back-end technologies. His expertise lies in crafting efficient, scalable, and visually appealing applications like <strong>MarkMe</strong>.
+                                </p>
+                                <p class="text-muted fs-5 lh-lg">
+                                    With a keen eye for detail and a problem-solving mindset, Atharv transforms complex requirements into elegant and user-friendly digital experiences. He is committed to continuous learning and applying the latest industry best practices.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <h3 class="section-title">Technical Skills</h3>
+                                <div class="d-flex flex-wrap justify-content-center gap-2">
+                                    <span class="skill-badge"><i class="fab fa-js-square"></i> JavaScript</span>
+                                    <span class="skill-badge"><i class="fab fa-php"></i> PHP</span>
+                                    <span class="skill-badge"><i class="fab fa-html5"></i> HTML5</span>
+                                    <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+                                    <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap 5</span>
+                                    <span class="skill-badge"><i class="fab fa-react"></i> React.js</span>
+                                    <span class="skill-badge"><i class="fas fa-database"></i> SQL / MySQL</span>
+                                    <span class="skill-badge"><i class="fas fa-server"></i> Backend Dev</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <p class="mb-1">&copy; <?php echo date("Y"); ?> All rights reserved by <strong>MarkMe</strong></p>
+                    <small>Designed & developed by <span class="text-white">Atharv Tambe</span></small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
